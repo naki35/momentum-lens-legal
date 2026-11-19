@@ -3,21 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Momentum Lens</title>
-<meta name="description" content="Momentum Lens is a desktop analytics tool for creators: view speed and statistical view forecasts for your own Instagram Reels and TikTok videos.">
+<title>Momentum Lens: view speed and forecasts for your own videos</title>
+<meta name="description" content="Momentum Lens is a desktop analytics tool for creators: view speed, momentum and statistical view forecasts for your own Instagram Reels and TikTok videos. Read-only, local, no posting.">
 <style>
-  :root { --bg:#ffffff; --fg:#1c1c1e; --muted:#5c5c63; --line:#e3e3e8; --accent:#2a78d6; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#16171a; --fg:#ececf0; --muted:#a0a0aa; --line:#2c2d33; --accent:#5aa0ee; } }
+  :root { --bg:#ffffff; --fg:#1c1c1e; --muted:#5c5c63; --line:#e3e3e8; --accent:#2a64d0; --card:#f5f6fa; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#13141a; --fg:#ececf0; --muted:#a6a6b2; --line:#2c2d36; --accent:#7aa6f5; --card:#1b1c24; } }
+  * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:56px 16px 80px; }
-  h1 { font-size:2.2rem; line-height:1.15; margin:0 0 8px; letter-spacing:-0.02em; }
-  h2 { font-size:1.15rem; margin:36px 0 8px; }
+  main { max-width:880px; margin:0 auto; padding:56px 16px 80px; }
+  h1 { font-size:2.6rem; line-height:1.1; margin:0 0 10px; letter-spacing:-0.025em; }
+  h2 { font-size:1.35rem; margin:52px 0 12px; letter-spacing:-0.01em; }
+  h3 { font-size:1.05rem; margin:0 0 4px; }
   p, li { margin:8px 0; }
-  .lead { font-size:1.25rem; color:var(--fg); }
-  .muted { color:var(--muted); font-size:.92rem; }
+  .lead { font-size:1.3rem; max-width:34em; }
+  .muted { color:var(--muted); font-size:.93rem; }
   a { color:var(--accent); }
-  hr { border:0; border-top:1px solid var(--line); margin:40px 0; }
-  nav a { margin-right:18px; }
+  hr { border:0; border-top:1px solid var(--line); margin:56px 0 0; }
+  .nav { display:flex; flex-wrap:wrap; gap:6px 22px; margin:18px 0 0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; }
+  .card p { margin:4px 0 0; color:var(--muted); font-size:.97rem; }
+  ol.steps { padding-left:1.2em; }
+  figure { margin:22px 0 0; }
+  figure img { width:100%; height:auto; border-radius:14px; border:1px solid var(--line); display:block; }
+  figcaption { color:var(--muted); font-size:.9rem; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; margin-top:12px; font-size:.97rem; }
+  th, td { text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; font-size:.9rem; }
+  code { background:var(--card); padding:1px 6px; border-radius:6px; font-size:.92em; }
+  @media (max-width:560px) { h1 { font-size:2rem; } main { padding-top:36px; } th, td { padding:8px 6px; } }
 </style>
 </head>
 <body>
@@ -25,39 +39,74 @@
 
 <h1>Momentum Lens</h1>
 <p class="lead">See how fast your videos are growing, and where they are likely to end up.</p>
-<p class="muted">Türkçe: Videolarının ne kadar hızlı büyüdüğünü ve nereye ulaşacağını göster. Türkçe bölüm sayfanın altında.</p>
+<p class="muted">Türkçe: Videolarının ne kadar hızlı büyüdüğünü ve nereye ulaşacağını gör. Türkçe özet sayfanın altında.</p>
+<nav class="nav" aria-label="Pages">
+  <a href="privacy-policy.html">Privacy Policy / Gizlilik Politikası</a>
+  <a href="terms-of-service.html">Terms of Service / Kullanım Şartları</a>
+  <a href="mailto:aliydrm15@gmail.com">Contact</a>
+</nav>
+
+<figure>
+  <img src="img/screen-list.jpg" width="1280" height="900" alt="The Momentum Lens videos screen: a featured video with its view count and a card for each of the creator's videos with a verdict such as Doing very well.">
+  <figcaption>The videos screen. Screenshots show synthetic demo data, not a real account.</figcaption>
+</figure>
 
 <h2>What it does</h2>
-<p>Momentum Lens is a desktop analytics tool for creators. After you connect your own account, it reads your own videos' public counters
-(views, likes, comments, shares) at regular intervals and keeps them on your computer. From that history it shows:</p>
+<p>Momentum Lens is a desktop analytics tool for individual creators. After you connect your own account, it reads the counters of your own videos
+(views, likes, comments, shares) at regular intervals and keeps them on your computer. From that history it works out, with plain statistics and no
+machine learning:</p>
+<div class="grid">
+  <div class="card"><h3>View speed</h3><p>How many views per hour a video is getting right now, over the last 15, 30 and 60 minutes.</p></div>
+  <div class="card"><h3>Momentum</h3><p>Whether a video is speeding up or slowing down, and whether that is normal for a video of that age.</p></div>
+  <div class="card"><h3>Comparison</h3><p>How a video compares with your own earlier videos at the same age.</p></div>
+  <div class="card"><h3>Forecast</h3><p>Expected views after 1, 6, 12, 24, 48 and 72 hours, always with a likely range, never a single promise.</p></div>
+  <div class="card"><h3>Unusual changes</h3><p>A notice when a video suddenly gets extra reach or is held back, so you can look into it.</p></div>
+  <div class="card"><h3>Your language</h3><p>The whole panel is available in English and Turkish.</p></div>
+</div>
+
+<figure>
+  <img src="img/screen-detail.jpg" width="1280" height="1150" alt="A video detail screen: verdict, current views, views per hour, a one-day forecast with a range, and a chart with the forecast and the likely range.">
+  <figcaption>A video's detail screen: today's views, current speed, the forecast with its range, and how it compares with earlier videos.</figcaption>
+</figure>
+
+<h2>How it works</h2>
+<ol class="steps">
+  <li>You connect your own account through the platform's official login. The app only asks to <em>read</em>.</li>
+  <li>The app lists your videos and reads their counters, quickly for new videos and less often for older ones, using the platform's official API only.</li>
+  <li>Everything is calculated and shown on your own computer, in a local panel that only your computer can open.</li>
+</ol>
+
+<h2>Data and permissions</h2>
+<table>
+  <tr><th>Platform</th><th>Access</th><th>Used for</th></tr>
+  <tr><td>Instagram<br><span class="muted">Instagram API</span></td><td>Your own Reels and their insights counters</td><td>Views and engagement counters over time</td></tr>
+  <tr><td>TikTok<br><span class="muted">Login Kit + Display API</span></td>
+      <td><code>user.info.basic</code><br><code>video.list</code></td>
+      <td><code>user.info.basic</code>: show which account is connected.<br><code>video.list</code>: list your own videos and read their public counters.</td></tr>
+</table>
 <ul>
-  <li>how many views per hour a video is getting right now, and whether it is speeding up or slowing down,</li>
-  <li>how it compares with your earlier videos at the same age,</li>
-  <li>a statistical forecast of future views with a likely range, and an alert if a video is suddenly redistributed or restricted.</li>
+  <li>Only your own account is read. The app never posts, edits or deletes anything, and never contacts your followers.</li>
+  <li>Data is stored only on the computer that runs the app. It is never sold, shared or used for advertising.</li>
+  <li>Access tokens are stored encrypted on that computer and are never shown or logged.</li>
+  <li>You can disconnect at any time and ask for all stored data to be deleted (see the <a href="privacy-policy.html">Privacy Policy</a>).</li>
 </ul>
 
-<h2>How it uses platform data</h2>
-<ul>
-  <li><strong>Instagram</strong> (Instagram API): your own Reels and their insights counters.</li>
-  <li><strong>TikTok</strong> (Login Kit + Display API): only two scopes, <code>user.info.basic</code> (to show which account is connected) and
-      <code>video.list</code> (to list your own videos and read their counters).</li>
-  <li>Data is stored only on the computer running the app. It is never sold or shared, and the app never posts content.</li>
-  <li>You can disconnect at any time and delete all stored data.</li>
-</ul>
-
-<h2>Policies</h2>
-<nav><a href="privacy-policy.html">Privacy Policy / Gizlilik Politikası</a><a href="terms-of-service.html">Terms of Service / Kullanım Şartları</a></nav>
+<h2>Who makes it</h2>
+<p>Momentum Lens is a personal project by Ali Naki YILDIRIM (İzmir, Türkiye). Questions, data requests and feedback:
+<a href="mailto:aliydrm15@gmail.com">aliydrm15@gmail.com</a>.</p>
 
 <p class="muted">Momentum Lens is not affiliated with, endorsed by, or sponsored by Instagram, Meta Platforms or TikTok.</p>
 
 <hr>
 
 <h2 lang="tr">Türkçe özet</h2>
-<p lang="tr">Momentum Lens, içerik üreticileri için bir masaüstü analiz aracıdır. Kendi hesabını bağladıktan sonra kendi videolarının herkese açık
-sayaçlarını (izlenme, beğeni, yorum, paylaşım) düzenli aralıklarla okur ve yalnızca senin bilgisayarında saklar. Bu geçmişten izlenme hızını,
-yavaşlıyor mu hızlanıyor mu olduğunu, önceki videolarınla kıyasını ve olası aralıklı bir izlenme tahminini gösterir.</p>
-<p lang="tr">TikTok için yalnızca iki izin kullanılır: <code>user.info.basic</code> ve <code>video.list</code>. Veriler satılmaz, paylaşılmaz, uygulama içerik
-paylaşmaz. İstediğin zaman bağlantıyı kesip tüm verileri sildirebilirsin.</p>
+<p lang="tr">Momentum Lens, içerik üreticileri için bir masaüstü analiz aracıdır. Kendi hesabını resmî giriş ekranı üzerinden bağladıktan sonra kendi videolarının
+sayaçlarını (izlenme, beğeni, yorum, paylaşım) düzenli aralıklarla okur ve yalnızca senin bilgisayarında saklar. Bu geçmişten, makine öğrenmesi olmadan
+yalnızca istatistikle şunları gösterir: saatlik izlenme hızı, videonun hızlanıp yavaşlaması, önceki videolarınla kıyas, aralıklı izlenme tahmini ve
+olağandışı değişiklik bildirimi.</p>
+<p lang="tr">TikTok için yalnızca iki izin kullanılır: <code>user.info.basic</code> (hangi hesabın bağlı olduğunu göstermek) ve <code>video.list</code>
+(kendi videolarını listelemek ve sayaçlarını okumak). Uygulama içerik paylaşmaz, değiştirmez veya silmez; veriler satılmaz ve paylaşılmaz.
+İstediğin zaman bağlantıyı kesip tüm verilerin silinmesini isteyebilirsin. İletişim: <a href="mailto:aliydrm15@gmail.com">aliydrm15@gmail.com</a></p>
 
 </main>
 </body>
