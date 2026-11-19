@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momentum Lens</title>
+<meta name="description" content="Momentum Lens is a desktop analytics tool for creators: view speed and statistical view forecasts for your own Instagram Reels and TikTok videos.">
+<style>
+  :root { --bg:#ffffff; --fg:#1c1c1e; --muted:#5c5c63; --line:#e3e3e8; --accent:#2a78d6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16171a; --fg:#ececf0; --muted:#a0a0aa; --line:#2c2d33; --accent:#5aa0ee; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:56px 16px 80px; }
+  h1 { font-size:2.2rem; line-height:1.15; margin:0 0 8px; letter-spacing:-0.02em; }
+  h2 { font-size:1.15rem; margin:36px 0 8px; }
+  p, li { margin:8px 0; }
+  .lead { font-size:1.25rem; color:var(--fg); }
+  .muted { color:var(--muted); font-size:.92rem; }
+  a { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--line); margin:40px 0; }
+  nav a { margin-right:18px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Momentum Lens</h1>
+<p class="lead">See how fast your videos are growing, and where they are likely to end up.</p>
+<p class="muted">Türkçe: Videolarının ne kadar hızlı büyüdüğünü ve nereye ulaşacağını göster. Türkçe bölüm sayfanın altında.</p>
+
+<h2>What it does</h2>
+<p>Momentum Lens is a desktop analytics tool for creators. After you connect your own account, it reads your own videos' public counters
+(views, likes, comments, shares) at regular intervals and keeps them on your computer. From that history it shows:</p>
+<ul>
+  <li>how many views per hour a video is getting right now, and whether it is speeding up or slowing down,</li>
+  <li>how it compares with your earlier videos at the same age,</li>
+  <li>a statistical forecast of future views with a likely range, and an alert if a video is suddenly redistributed or restricted.</li>
+</ul>
+
+<h2>How it uses platform data</h2>
+<ul>
+  <li><strong>Instagram</strong> (Instagram API): your own Reels and their insights counters.</li>
+  <li><strong>TikTok</strong> (Login Kit + Display API): only two scopes, <code>user.info.basic</code> (to show which account is connected) and
+      <code>video.list</code> (to list your own videos and read their counters).</li>
+  <li>Data is stored only on the computer running the app. It is never sold or shared, and the app never posts content.</li>
+  <li>You can disconnect at any time and delete all stored data.</li>
+</ul>
+
+<h2>Policies</h2>
+<nav><a href="privacy-policy.html">Privacy Policy / Gizlilik Politikası</a><a href="terms-of-service.html">Terms of Service / Kullanım Şartları</a></nav>
+
+<p class="muted">Momentum Lens is not affiliated with, endorsed by, or sponsored by Instagram, Meta Platforms or TikTok.</p>
+
+<hr>
+
+<h2 lang="tr">Türkçe özet</h2>
+<p lang="tr">Momentum Lens, içerik üreticileri için bir masaüstü analiz aracıdır. Kendi hesabını bağladıktan sonra kendi videolarının herkese açık
+sayaçlarını (izlenme, beğeni, yorum, paylaşım) düzenli aralıklarla okur ve yalnızca senin bilgisayarında saklar. Bu geçmişten izlenme hızını,
+yavaşlıyor mu hızlanıyor mu olduğunu, önceki videolarınla kıyasını ve olası aralıklı bir izlenme tahminini gösterir.</p>
+<p lang="tr">TikTok için yalnızca iki izin kullanılır: <code>user.info.basic</code> ve <code>video.list</code>. Veriler satılmaz, paylaşılmaz, uygulama içerik
+paylaşmaz. İstediğin zaman bağlantıyı kesip tüm verileri sildirebilirsin.</p>
+
+</main>
+</body>
+</html>
